@@ -16,20 +16,17 @@ Route::get('/', function()
     return view('welcome');
 });
 
-Route::get('home', function()
-{
-    return view('pages.home');
-});
+Route::get('admin/login', 'UserController@getLoginAdmin')->name('getlogin');
+Route::post('admin/login', 'UserController@postLoginAdmin')->name('postlogin');
 
-Route::get('product_detail', function()
-{
-    return view('pages.product_detail');
-});
+Route::middleware(['adminLogin'])->prefix('admin')->group(function () {
+    Route::prefix('category')->group(function () {
+    	Route::get('list', 'CategoryController@getList');
+    	Route::get('add', 'CategoryController@getAdd');
+        Route::post('add', 'CategoryController@postAdd');
+    });
 
-Route::group(['prefix'=>'admin'], function()
-{
-    Route::group(['prefix'=>'slide'], function()
-    {
+    Route::prefix('slide')->group(function () {
         Route::get('list', 'SlideController@getList')->name('list_slide');
 
         Route::get('add', 'SlideController@getAdd')->name('add_slide');
