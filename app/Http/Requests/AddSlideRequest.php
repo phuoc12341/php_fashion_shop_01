@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SlideRequest extends FormRequest
+class AddSlideRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,9 +32,9 @@ class SlideRequest extends FormRequest
     public function messages()
     {
         return [
-            'link.required' => __('message.link_required'),
-            'image.required' => __('message.image_required'), 
-            'image.image' => __('message.image_format'),
+            'link.required' => trans('message.link_required'),
+            'image.required' => trans('message.image_required'), 
+            'image.image' => trans('message.image_format'),
         ];       
     }
 }

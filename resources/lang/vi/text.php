@@ -20,5 +20,9 @@ return [
     'country' => 'Quốc gia',
     'description' => 'Mô tả',
     'name' => 'Tên',
+    'promotion' => 'Chương trình khuyễn mãi',
+    'start_at' => 'Thời gian bắt đầu',
+    'end_at' => 'Thời gian kết thúc',
+    'discount' => 'Phần trăm giảm giá',
 ];
 ?>

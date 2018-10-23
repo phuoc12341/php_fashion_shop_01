@@ -49,4 +49,17 @@ Route::prefix('admin')->group(function () {
 
         Route::get('delete/{id}', 'ManufacturerController@getDelete')->name('delete_manufacturer');
     });
+
+    Route::group(['prefix' => 'promotion'], function()
+    {
+        Route::get('list', 'PromotionController@getList')->name('list_promotion');
+
+        Route::get('add', 'PromotionController@getAdd')->name('add_promotion');
+        Route::post('add', 'PromotionController@postAdd')->name('add_promotion');
+
+        Route::get('edit/{id}', 'PromotionController@getEdit')->name('edit_promotion');
+        Route::post('edit/{id}', 'PromotionController@postEdit')->name('edit_promotion');
+
+        Route::get('delete/{id}', 'PromotionController@getDelete')->name('delete_promotion');
+    });
 });

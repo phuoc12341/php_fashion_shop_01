@@ -20,5 +20,9 @@ return [
     'country' => 'Country',
     'description' => 'Description',
     'name' => 'Name',
+    'promotion' => 'Promotion',
+    'start_at' => 'Start time',
+    'end_at' => 'End time',
+    'discount' => 'Percent discount',
 ];
 ?>

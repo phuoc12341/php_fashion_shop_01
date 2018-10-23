@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ __('text.manufacturer') }}
+                <h1 class="page-header">{{ __('text.promotion') }}
                     <small>{{ __('text.list') }}</small>
                 </h1>
             </div>
@@ -20,28 +20,24 @@
                 <thead>
                     <tr align="center">
                         <th>ID</th>
-                        <th>{{ __('text.name') }}</th>
-                        <th>{{ __('text.country') }}</th>
-                        <th>{{ __('text.description') }}</th> 
+                        <th>{{ __('text.description') }}</th>
+                        <th>{{ __('text.discount') }}</th>
+                        <th>{{ __('text.start_at') }}</th>
+                        <th>{{ __('text.end_at') }}</th> 
                         <th>{{ __('text.delete') }}</th>
                         <th>{{ __('text.edit') }}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($manufacturer as $manu)
+                    @foreach($promotion as $pro)
                     <tr class="odd gradeX" align="center">
-                        <td>{{ $manu->id }}</td>
-                        <td>{{ $manu->name }}</td>
-                        <td>{{ $manu->country }}</td>
-                        <td>{{ $manu->description }}</td>
-                        <td class="center">
-                            <i class="fa fa-trash-o  fa-fw"></i>
-                            <a href="{{ route('delete_manufacturer', $manu->id) }}">{{ __('text.delete') }}</a>
-                        </td>
-                        <td class="center">
-                            <i class="fa fa-pencil fa-fw"></i>
-                            <a href="{{ route('edit_manufacturer', $manu->id) }}">{{ __('text.edit') }}</a>
-                        </td>
+                        <td>{{ $pro->id }}</td>
+                        <td>{{ $pro->description }}</td>
+                        <td>{{ $pro->discount }}</td>
+                        <td>{{ $pro->start_at }}</td>
+                        <td>{{ $pro->end_at }}</td>
+                        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href="{{ route('delete_promotion', $pro->id) }}">{{ __('text.delete') }}</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('edit_promotion', $pro->id) }}">{{ __('text.edit') }}</a></td>
                     </tr>
                     @endforeach
                 </tbody>

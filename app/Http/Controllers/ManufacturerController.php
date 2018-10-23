@@ -29,7 +29,7 @@ class ManufacturerController extends Controller
             'country' => $request['country'],
         ]);
 
-        return redirect('admin/manufacturer/add')->with('message', trans('message.add'));
+        return redirect('admin/manufacturer/add')->with('message', __('message.add'));
     }
 
     public function getEdit($id)
@@ -47,7 +47,7 @@ class ManufacturerController extends Controller
         $manufacturer->country = $request->country;
         $manufacturer->update();
 
-        return redirect('admin/manufacturer/edit/' . $id)->with('message', trans('message.edit'));
+        return redirect('admin/manufacturer/edit/' . $id)->with('message', __('message.edit'));
     }
 
     public function getDelete($id)
@@ -55,6 +55,6 @@ class ManufacturerController extends Controller
         $manufacturer = Manufacturer::findOrFail($id);
         $manufacturer->delete();
 
-        return redirect('admin/manufacturer/list')->with('message', trans('message.delete'));
+        return redirect('admin/manufacturer/list')->with('message', __('message.delete'));
     }
 }
