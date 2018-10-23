@@ -1,8 +1,8 @@
 <?php
 return [
-    'add' => 'add',
-    'edit' => 'edit',
-    'delete' => 'delete',
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
     'link' => 'Link',
     'image' => 'Image',
     'reset' => 'Reset',
@@ -17,5 +17,8 @@ return [
     'manufacturer' => 'Manufacturer',
     'product' => 'Product',
     'user' => 'User',
+    'country' => 'Country',
+    'description' => 'Description',
+    'name' => 'Name',
 ];
 ?>

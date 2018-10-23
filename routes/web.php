@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function()
 {
     return view('welcome');
@@ -19,7 +18,7 @@ Route::get('/', function()
 Route::get('admin/login', 'UserController@getLoginAdmin')->name('getlogin');
 Route::post('admin/login', 'UserController@postLoginAdmin')->name('postlogin');
 
-Route::middleware(['adminLogin'])->prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::prefix('category')->group(function () {
     	Route::get('list', 'CategoryController@getList');
     	Route::get('add', 'CategoryController@getAdd');
@@ -36,5 +35,18 @@ Route::middleware(['adminLogin'])->prefix('admin')->group(function () {
         Route::post('edit/{id}', 'SlideController@postEdit')->name('edit_slide');
 
         Route::get('delete/{id}', 'SlideController@getDelete')->name('delete_slide');
+    });
+
+    Route::group(['prefix' => 'manufacturer'], function()
+    {
+        Route::get('list', 'ManufacturerController@getList')->name('list_manufacturer');
+
+        Route::get('add', 'ManufacturerController@getAdd')->name('add_manufacturer');
+        Route::post('add', 'ManufacturerController@postAdd')->name('add_manufacturer');
+
+        Route::get('edit/{id}', 'ManufacturerController@getEdit')->name('edit_manufacturer');
+        Route::post('edit/{id}', 'ManufacturerController@postEdit')->name('edit_manufacturer');
+
+        Route::get('delete/{id}', 'ManufacturerController@getDelete')->name('delete_manufacturer');
     });
 });

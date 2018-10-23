@@ -17,5 +17,8 @@ return [
     'manufacturer' => 'Nhà sản xuất',
     'product' => 'Sản phẩm',
     'user' => 'Người dùng',
+    'country' => 'Quốc gia',
+    'description' => 'Mô tả',
+    'name' => 'Tên',
 ];
 ?>

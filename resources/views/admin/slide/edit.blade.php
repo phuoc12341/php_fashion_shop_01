@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ trans('text.slide') }}
+                <h1 class="page-header">{{ __('text.slide') }}
                     <small>{{ $slide->name }}</small>
                 </h1>
             </div>
@@ -28,17 +28,17 @@
 
                 {!! Form::open(['url' => 'admin/slide/edit/' . $slide->id, 'files' => 'true']) !!}
                 <div class="form-group">
-                    {!! Form::label('link', trans('text.link')) !!}
+                    {!! Form::label('link', __('text.link')) !!}
                     {!! Form::text('link', $slide->link, array('class' => 'form-control')) !!}
                 </div>
                 <div  class="form-group">
-                    {!! Form::label('image', trans('text.image')) !!}
+                    {!! Form::label('image', __('text.image')) !!}
                     <p><img class="img-fm" src="{{ config('image.paths.resource') }}/{{ $slide->image }}"></p>
                     {!! Form::file('image', ['class' => 'dropify']) !!}
                 </div>
 
-                {!! Form::submit(trans('text.edit'), ['class' => 'btn btn-default']) !!}
-                {!! Form::reset(trans('text.reset'), ['class' => 'btn btn-default']) !!}
+                {!! Form::submit(__('text.edit'), ['class' => 'btn btn-default']) !!}
+                {!! Form::reset(__('text.reset'), ['class' => 'btn btn-default']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
