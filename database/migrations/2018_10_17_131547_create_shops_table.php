@@ -18,7 +18,7 @@ class CreateShopsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('branch_id');
             $table->string('address');
-            $table->string('phone' 20);
+            $table->string('phone', 20);
             $table->timestamps();
 
             $table->foreign('branch_id')->references('id')->on('branchs')->onDelete('cascade')->onUpdate('cascade');
