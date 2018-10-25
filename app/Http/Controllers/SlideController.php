@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Slide;
 
+use App\Http\Requests\SlideRequest;
+
 class SlideController extends Controller
 {
     public function getList()
@@ -19,14 +21,8 @@ class SlideController extends Controller
         return view('admin.slide.add');
     }
 
-    public function postAdd(Request $request)
+    public function postAdd(SlideRequest $request)
     {
-
-        $this->validate($request, ['link' => 'required',
-            'image' => 'required|image'],
-            ['link.required' => trans('message.link_required'),
-            'image.required' => trans('message.image_required'), 
-            'image.image' => trans('message.image_format')]);
         $file = $request->file('image');
         $file->move(config('image.paths.resource'), $file->getClientOriginalName());
         $slide = Slide::create([
@@ -39,12 +35,12 @@ class SlideController extends Controller
 
     public function getEdit($id)
     {
-        $slide = Slide::find($id);
+        $slide = Slide::findOrFail($id);
 
         return view('admin.slide.edit', ['slide'=>$slide]);
     }
 
-    public function postEdit(Request $request, $id)
+    public function postEdit(SlideRequest $request, $id)
     {
         $slide = Slide::findOrFail($id);
         $slide->link = $request->link;

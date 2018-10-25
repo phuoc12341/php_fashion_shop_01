@@ -23,7 +23,7 @@ class UserController extends Controller
         $request->validated();
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return redirect('admin/category/list');
+            return redirect('admin/slide/list');
         } else {
             $request->session()->flash('failed', __('messages.failed'));
 

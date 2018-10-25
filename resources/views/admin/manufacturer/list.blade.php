@@ -6,36 +6,36 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ __('text.slide') }}
+                <h1 class="page-header">{{ __('text.manufacturer') }}
                     <small>{{ __('text.list') }}</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
-            @if (session('message'))
+            @if(session('message'))
             <div class="alert alert-success">
-                {{ session('message') }}
+                {{session('message')}}
             </div>
             @endif
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
                         <th>ID</th>
-                        <th>{{ __('text.image') }}</th>
-                        <th>{{ __('text.link') }}</th>
+                        <th>{{ __('text.name') }}</th>
+                        <th>{{ __('text.country') }}</th>
+                        <th>{{ __('text.description') }}</th> 
                         <th>{{ __('text.delete') }}</th>
                         <th>{{ __('text.edit') }}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($slide as $sl)
+                    @foreach($manufacturer as $manu)
                     <tr class="odd gradeX" align="center">
-                        <td>{{ $sl->id }}</td>
-                        <td>
-                            <img class="img-fm" src="{{ config('image.paths.resource') }}/{{ $sl->image }}">
-                        </td>
-                        <td>{{ $sl->link }}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('delete_slide', $sl->id) }}">{{ __('text.delete') }}</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('edit_slide', $sl->id) }}">{{ __('text.edit') }}</a></td>
+                        <td>{{$manu->id}}</td>
+                        <td>{{$manu->name}}</td>
+                        <td>{{$manu->country}}</td>
+                        <td>{{$manu->description}}</td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('delete_manufacturer', $manu->id) }}"> {{ __('text.delete') }}</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('edit_manufacturer', $manu->id) }}">{{ __('text.edit') }}</a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -46,5 +46,4 @@
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
-
 @endsection

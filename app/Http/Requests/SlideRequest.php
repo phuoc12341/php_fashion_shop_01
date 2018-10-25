@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostLoginAdmin extends FormRequest
+class SlideRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,17 @@ class PostLoginAdmin extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
-            'password' => 'required',
+            'link' => 'required',
+            'image' => 'required|image',
         ];
     }
 
     public function messages()
     {
         return [
-            'email.required' => __('messages.email.required'),
-            'password.required' => __('messages.email.required'),
+            'link.required' => trans('message.link_required'),
+            'image.required' => trans('message.image_required'), 
+            'image.image' => trans('message.image_format'),
         ];       
     }
 }
