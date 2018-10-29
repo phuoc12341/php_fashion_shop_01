@@ -52,6 +52,18 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="{{ route('list_promotion') }}"><i class="fa fa-cube fa-fw"></i> {{ __('text.promotion') }}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('list_promotion') }}">{{ __('text.list') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('add_promotion') }}">{{ __('text.add') }}</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="{{ route('list_slide') }}"><i class="fa fa-bar-chart-o fa-fw"></i>{{ __('text.slide') }}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

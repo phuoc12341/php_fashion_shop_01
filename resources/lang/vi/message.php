@@ -16,5 +16,13 @@ return [
     'description' => 'Bạn chưa nhập mô tả.',
     'description_min' => 'Mô tả có độ dài bé nhất 100 kí tự.',
     'description_max' => 'Mô tả có độ dài lớn nhất 500 kí tự .',
+    'descrip_promotion_min' => 'Mô tả phải có độ dài từ 3 đến 255 ký tự.',
+    'descrip_promotion_max' => 'Mô tả phải có độ dài từ 3 đến 255 ký tự.',
+    'discount' => 'Bạn chưa nhập phần trăm giảm giá.',
+    'discount_integer' => 'Phần trăm giảm giá phải là số nguyên.',
+    'discount_min' => 'Phần trăm giảm giá phải lớn hơn 0.',
+    'discount_max' => 'Phần trăm giảm giá phải bé hơn 100.',
+    'start_at' => 'Bạn chưa nhập ngày bắt đầu khuyến mại',
+    'end_at' => 'Bạn chưa nhập ngày kết thúc khuyến mại',
 ];
 ?>

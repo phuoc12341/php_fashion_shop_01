@@ -16,5 +16,13 @@ return [
     'description' => 'The description field is required.',
     'description_min' => 'Description must be at least 100 characters.',
     'description_max' => 'Description may not be greater than 500 characters.',
+    'descrip_promotion_min' => 'Description must be at least 3 characters.',
+    'descrip_promotion_max' => 'Description may not be greater than 255 characters.',
+    'discount' => 'The discount field is required.',
+    'discount_integer' => 'Discount must be an integer.',
+    'discount_min' => 'Discount must be at least 0.',
+    'discount_max' => 'Discount may not be greater than 100.',
+    'start_at' => 'The start time is required.',
+    'end_at' => 'The end time is required.',
 ];
 ?>

@@ -30,7 +30,7 @@ class SlideController extends Controller
         	'image' => $file->getClientOriginalName(),
         ]);
         
-        return redirect('admin/slide/add')->with('message', trans('message.add'));
+        return redirect('admin/slide/add')->with('message', __('message.add'));
     }
 
     public function getEdit($id)
@@ -52,7 +52,7 @@ class SlideController extends Controller
         }
         $slide->update();
 
-        return redirect('admin/slide/edit/' . $id)->with('message', trans('message.edit'));
+        return redirect('admin/slide/edit/' . $id)->with('message', __('message.edit'));
     }
 
     public function getDelete($id)
@@ -60,6 +60,6 @@ class SlideController extends Controller
         $slide = Slide::findOrFail($id);
         $slide->delete();
 
-        return redirect('admin/slide/list')->with('message', trans('message.delete'));
+        return redirect('admin/slide/list')->with('message', __('message.delete'));
     }
 }
