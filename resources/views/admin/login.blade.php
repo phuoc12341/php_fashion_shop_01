@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>{!! 'Admin - PhucKieu' !!}</title>
     <base href="{{asset('')}}">
 
@@ -31,7 +30,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{!! __('messages.vuilongdangnhap') !!}</h3>
+                        <h3 class="panel-title">{!! __('text.please_login') !!}</h3>
                     </div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
@@ -57,7 +56,7 @@
                                     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password' , 'autofocus']) !!}
                                 </div>
 
-                                {!! Form::submit(__('messages.dangnhap'), ['class' => ['btn', 'btn-lg', 'btn-success', 'btn-block']]) !!}
+                                {!! Form::submit(__('text.login'), ['class' => ['btn', 'btn-lg', 'btn-success', 'btn-block']]) !!}
                             </fieldset>
                         {!! Form::close() !!}
                         
