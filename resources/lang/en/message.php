@@ -30,5 +30,11 @@ return [
     'adress_max' => 'Address may not be greater than 100 characters.',
     'phone' => 'The phone field is required.',
     'phone_regex' => 'The phone number must be 10 digits.',
+    'name.required' => 'Name is required',
+    'name.unique' => 'Name has already exist',
+    'name.max' => 'Name is limitted 255 character',
+    'gender.required' => 'Gender is required',
+    'parent_category.required' => 'Parent Category name is required',
+    'priority.required' => 'Priority is required',
+    'priority.Integer' => 'Priority must be Integer',
 ];
-?>

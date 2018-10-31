@@ -14,7 +14,6 @@ yarn-error.log
 .phpunit.result.cache
 /public/admin_asset
 /public/source
-/public/js/add_category.js
-/public/css/app.css
-/public/js/app.js
+/public/css
+/public/js
 /public/mix-manifest.json
