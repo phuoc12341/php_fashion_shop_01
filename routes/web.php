@@ -18,14 +18,20 @@ Route::get('/', function()
 Route::get('admin/login', 'UserController@getLoginAdmin')->name('getlogin');
 Route::post('admin/login', 'UserController@postLoginAdmin')->name('postlogin');
 
-Route::prefix('admin')->group(function () {
-    Route::prefix('category')->group(function () {
-    	Route::get('list', 'CategoryController@getList');
-    	Route::get('add', 'CategoryController@getAdd');
-        Route::post('add', 'CategoryController@postAdd');
+Route::middleware('adminLogin')->prefix('admin')->group(function() {
+    Route::prefix('category')->group(function() {
+        Route::get('list', 'CategoryController@getList')->name('getListCategory');
+
+        Route::get('add', 'CategoryController@getAdd')->name('getAddCategory');
+        Route::post('add', 'CategoryController@postAdd')->name('postAddCategory');
+
+        Route::get('edit/{id}', 'CategoryController@getEdit')->name('getEditCategory');
+        Route::post('edit/{id}', 'CategoryController@postEdit')->name('postEditCategory');
+
+        Route::get('delete/{id}', 'CategoryController@getDelete')->name('getDeleteCategory');
     });
 
-    Route::prefix('slide')->group(function () {
+    Route::prefix('slide')->group(function() {
         Route::get('list', 'SlideController@getList')->name('list_slide');
 
         Route::get('add', 'SlideController@getAdd')->name('add_slide');
@@ -37,8 +43,7 @@ Route::prefix('admin')->group(function () {
         Route::get('delete/{id}', 'SlideController@getDelete')->name('delete_slide');
     });
 
-    Route::group(['prefix' => 'manufacturer'], function()
-    {
+    Route::prefix('manufacturer')->group(function() {
         Route::get('list', 'ManufacturerController@getList')->name('list_manufacturer');
 
         Route::get('add', 'ManufacturerController@getAdd')->name('add_manufacturer');
@@ -50,8 +55,7 @@ Route::prefix('admin')->group(function () {
         Route::get('delete/{id}', 'ManufacturerController@getDelete')->name('delete_manufacturer');
     });
 
-    Route::group(['prefix' => 'promotion'], function()
-    {
+    Route::prefix('promotion')->group(function() {
         Route::get('list', 'PromotionController@getList')->name('list_promotion');
 
         Route::get('add', 'PromotionController@getAdd')->name('add_promotion');
@@ -63,8 +67,7 @@ Route::prefix('admin')->group(function () {
         Route::get('delete/{id}', 'PromotionController@getDelete')->name('delete_promotion');
     });
 
-    Route::group(['prefix' => 'shop'], function()
-    {
+    Route::prefix('shop')->group(function() {
         Route::get('list', 'ShopController@getList')->name('list_shop');
 
         Route::get('add', 'ShopController@getAdd')->name('add_shop');
@@ -74,5 +77,9 @@ Route::prefix('admin')->group(function () {
         Route::post('edit/{id}', 'ShopController@postEdit')->name('edit_shop');
 
         Route::get('delete/{id}', 'ShopController@getDelete')->name('delete_shop');
+    });
+
+    Route::prefix('ajax')->group(function() {
+        Route::get('category/{id}', 'AjaxController@getCategory');
     });
 });

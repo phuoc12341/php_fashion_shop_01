@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostLoginAdmin extends FormRequest
+class PostLoginAdminRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,8 +32,9 @@ class PostLoginAdmin extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => __('messages.email.required'),
-            'password.required' => __('messages.email.required'),
-        ];       
+            'email.required' => __('message.email.required'),
+            'password.required' => __('message.password.required'),
+        ];
+
     }
 }
