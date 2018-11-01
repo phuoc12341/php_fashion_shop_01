@@ -30,5 +30,15 @@ return [
     'adress_max' => 'Địa chỉ phải có nhiều nhất 100 kí tự.',
     'phone' => 'Bạn chưa nhập số điện thoại.',
     'phone_regex' => 'Số điện thoại chỉ được phép chứa 10 chữ số.',
+    'email.required' => 'Bạn chưa nhập email',
+    'password.required' => 'Bạn chưa nhập password',
+    'failed' => 'Đăng nhập thất bại',
+    'vuilongdangnhap' => 'Vui lòng đăng nhập',
+    'name.required' => 'Chưa nhập tên thể loại',
+    'name.unique' => 'Tên thể loại đã tồn tại',
+    'name.max' => 'Tên thể loại tối đa là 255 kí tự',
+    'gender.required' => 'Chưa chọn giới tính',
+    'parent_category.required' => 'Chưa chọn thể loại cha',
+    'priority.required' => 'Chưa chọn độ ưu tiên',
+    'priority.Integer' => 'Độ ưu tiên phải là một số',
 ];
-?>
