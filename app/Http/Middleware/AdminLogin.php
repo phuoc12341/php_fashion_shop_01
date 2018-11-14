@@ -19,7 +19,7 @@ class AdminLogin
     {
         if (Auth::check()){
             $user = Auth::user();
-            if ($user->role == config('role.user.admin') || $user()->role == config('role.user.superadmin')){
+            if ($user->role == config('role.user.admin') || $user->role == config('role.user.superadmin')){
                 return $next($request);
             } else {
                 return redirect('admin/login');

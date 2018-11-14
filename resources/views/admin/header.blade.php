@@ -23,7 +23,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> {{ __('text.setting') }}</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> {{ __('text.logout') }}</a>
+                <li><a href="{{ route('getlogout') }}"><i class="fa fa-sign-out fa-fw"></i> {{ __('text.logout') }}</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

@@ -28,6 +28,27 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="admin/product/list"><i class="fa fa-bar-chart-o fa-fw"></i>{{ __('text.product') }}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/product/list">{{ __('text.list') }}</a>
+                    </li>
+                    <li>
+                        <a href="admin/product/add">{{ __('text.add') }}</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="admin/bill/list"><i class="fa fa-bar-chart-o fa-fw"></i>{{ __('text.bill') }}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/bill/list">{{ __('text.list') }}</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="{{ route('list_manufacturer') }}"><i class="fa fa-bar-chart-o fa-fw"></i>{{ __('text.manufacturer') }}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -40,17 +61,6 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-cube fa-fw"></i> {{ __('text.product') }}<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="admin/product/list">{{ __('text.list') }}</a>
-                    </li>
-                    <li>
-                        <a href="admin/product/add">{{ __('text.add') }}</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
             <li>
                 <a href="{{ route('list_promotion') }}"><i class="fa fa-cube fa-fw"></i> {{ __('text.promotion') }}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
